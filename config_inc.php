@@ -206,7 +206,8 @@ $g_show_assigned_names = OFF;
 	'cn=temporales,cn=users,dc=icesi,dc=edu,dc=co',
 	'cn=pregrado,cn=users,dc=icesi,dc=edu,dc=co',
 	'cn=postgrado,cn=users,dc=icesi,dc=edu,dc=co',
-	'cn=profesores,cn=users,dc=icesi,dc=edu,dc=co'
+	'cn=profesores,cn=users,dc=icesi,dc=edu,dc=co',
+	 'cn=edc,cn=users,dc=icesi,dc=edu,dc=co'
 	);
 	// Organización LDAP
 	$g_ldap_organization = '';
