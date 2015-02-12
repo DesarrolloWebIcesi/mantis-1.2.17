@@ -1,10 +1,9 @@
 <?php
-	$g_hostname = 'mysql.icesi.edu.co';
-	$g_db_type = 'mysql';
-	$g_database_name = 'servicios_adm';
-	//$g_database_name = 'sgs';
-	$g_db_username = 'servicios';
-	$g_db_password = 'MfePayDghK3';
+	$g_hostname = ;
+	$g_db_type = ;
+	$g_database_name = ;
+	$g_db_username = ;
+	$g_db_password = ;
 	
 	// Configuración de los paths
 	if ( isset ( $_SERVER['SCRIPT_NAME'] ) ) {
