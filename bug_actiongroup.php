@@ -154,6 +154,26 @@
 					$f_resolution = gpc_get_int( 'resolution' );
 					$f_fixed_in_version = gpc_get_string( 'fixed_in_version', '' );
 					/** @todo we need to issue a helper_call_custom_function( 'issue_update_validate', array( $t_bug_id, $t_bug_data, $f_bugnote_text ) ); */
+                                        /**
+					Nombre: Andres Felipe Hinojosa
+					Fecha: 17/Marzo/2015
+					Descripción: Se agrego validación que en el momento de pasar de estado a resuelto se verifique fecha y hora de entrega, si no estan 
+					ingresados genera error.
+					**/
+                                        
+					$fecha_entrega=custom_field_get_value(32,$t_bug_id);
+					$hora_entrega=custom_field_get_value(33,$t_bug_id);
+                                        
+					if($fecha_entrega==""){
+                                            error_parameters( 'Fecha De Entrega del caso: '.$t_bug_id );
+                                            trigger_error( ERROR_EMPTY_FIELD, ERROR);
+					}
+                                        
+					if($hora_entrega=="HH:MM"){
+                                            error_parameters( 'Hora De Entrega del caso: '.$t_bug_id );
+                                            trigger_error( ERROR_EMPTY_FIELD, ERROR);
+					}
+                                        
 					bug_resolve( $t_bug_id, $f_resolution, null, $f_fixed_in_version, null, null, $f_bug_notetext, $f_bug_noteprivate );
 					helper_call_custom_function( 'issue_update_notify', array( $t_bug_id ) );
 				} else {
